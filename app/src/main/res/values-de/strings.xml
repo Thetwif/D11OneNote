@@ -13,4 +13,15 @@
     <string name="no">Nein</string>
     <string name="note_deleted">Notiz gelöscht</string>
     <string name="delete_message">Möchtest du diese Notiz wirklich löschen?</string>
+    <string name="upload">Foto hochladen</string>
+    <string name="location">Die Location wird hier sichtbar :)</string>
+    <string name="grade">Meine Note :o</string>
+    <string name="selectgrade">Bitte wähle die Bewertung für dieses Projekt aus</string>
+    <string-array name="grades">
+        <item>1 - Sehr gut</item>
+        <item>2 - Gut</item>
+        <item>3 - Befriedigend</item>
+        <item>4 - Genügend</item>
+        <item>5 - Nicht genügend</item>
+    </string-array>
 </resources>

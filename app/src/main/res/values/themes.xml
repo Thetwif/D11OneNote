@@ -2,14 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.OneNote2025" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimary">@color/pink</item>
     </style>
 
     <style name="Theme.OneNote2025" parent="Base.Theme.OneNote2025" />
 
     <style name="Title">
         <item name="android:textSize">32sp</item>
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@color/pink</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -34,11 +34,11 @@
     </style>
 
     <style name="ListItem.Title">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="ListItem.Message">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

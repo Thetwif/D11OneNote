@@ -13,4 +13,15 @@
     <string name="no">No</string>
     <string name="note_deleted">Note deleted</string>
     <string name="delete_message">Do you really want to delete this note?</string>
+    <string name="upload">Upload Photo</string>
+    <string name="location">You can see the location here :)</string>
+    <string name="grade">My Grade :o</string>
+    <string name="selectgrade">Please select the rating for this Project</string>
+    <string-array name="grades">
+        <item>1 - Perfect</item>
+        <item>2 - Very Good</item>
+        <item>3 - Okayish</item>
+        <item>4 - Barely enough</item>
+        <item>5 - Not good enough :(</item>
+    </string-array>
 </resources>
