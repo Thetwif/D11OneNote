@@ -9,7 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
+        android:background="@color/pink"
         app:titleTextColor="@color/white"/>
 
     <EditText
@@ -26,12 +26,22 @@
         android:layout_margin="@dimen/margin_medium"
         android:hint="@string/message"/>
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/noteImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium"/>
+
+
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/buttonImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_medium"
-        android:text="@string/save"
+        android:text="@string/upload"
         style="@style/Button"/>
 
     <Button
@@ -40,6 +50,22 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_medium"
         android:text="@string/show_location"
+        style="@style/Button"/>
+
+    <EditText
+        android:id="@+id/noteShowLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:hint="@string/location"/>
+
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:text="@string/save"
         style="@style/Button"/>
 
 </LinearLayout>

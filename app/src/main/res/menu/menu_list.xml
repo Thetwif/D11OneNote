@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/grade"
+        android:title="@string/grade"
+        android:icon="@drawable/ic_action_grade"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/add"
         android:title="@string/add"
         android:icon="@drawable/ic_add"

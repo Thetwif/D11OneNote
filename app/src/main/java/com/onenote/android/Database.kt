@@ -14,25 +14,31 @@ class Database(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
         // Database properties
         private const val DATABASE_NAME = "onenote"
         private const val DATABASE_TABLE_NAME = "notes"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
 
         // Database table column names
         private const val KEY_ID = "id"
         private const val KEY_TITLE = "title"
         private const val KEY_MESSAGE = "message"
+        private const val KEY_IMAGE = "image"
+        private const val KEY_LOCATION = "location"
 
         // Create table statement
         private const val CREATE_TABLE = ("""CREATE TABLE $DATABASE_TABLE_NAME(
                 $KEY_ID INTEGER PRIMARY KEY,
                 $KEY_TITLE TEXT,
-                $KEY_MESSAGE TEXT
+                $KEY_MESSAGE TEXT,
+                $KEY_IMAGE TEXT,
+                $KEY_LOCATION TEXT
                 )""")
 
         // Database cursor array
         private val CURSOR_ARRAY = arrayOf(
             KEY_ID,
             KEY_TITLE,
-            KEY_MESSAGE
+            KEY_MESSAGE,
+            KEY_IMAGE,
+            KEY_LOCATION
         )
 
         // Select all statement
@@ -52,6 +58,8 @@ class Database(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
 
         values.put(KEY_TITLE, note.title)
         values.put(KEY_MESSAGE, note.message)
+        values.put(KEY_IMAGE, note.image)
+        values.put(KEY_LOCATION, note.location)
 
         return values
     }
@@ -87,6 +95,7 @@ class Database(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
         return notes
     }
 
+    // get note
     @SuppressLint("Range")
     private fun cursorToNote(cursor: Cursor):Note? {
         var note: Note? = null
@@ -96,7 +105,9 @@ class Database(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
             note = Note(
                 getString(getColumnIndex(KEY_TITLE)),
                 getString(getColumnIndex(KEY_MESSAGE)),
-                getLong(getColumnIndex(KEY_ID))
+                getLong(getColumnIndex(KEY_ID)),
+                getString(getColumnIndex(KEY_IMAGE)),
+                getString(getColumnIndex(KEY_LOCATION))
             )
         }
 
@@ -124,6 +135,12 @@ class Database(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,
         db.execSQL(CREATE_TABLE)
     }
 
-    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
+    // Add the new columns because the db was already initalized
+    override fun onUpgrade(p0: SQLiteDatabase, p1: Int, p2: Int) {
+        if(p2 > 1)
+        {
+            p0.execSQL("ALTER TABLE $DATABASE_TABLE_NAME ADD COLUMN $KEY_IMAGE TEXT")
+            p0.execSQL("ALTER TABLE $DATABASE_TABLE_NAME ADD COLUMN $KEY_LOCATION TEXT")
+        }
     }
 }
